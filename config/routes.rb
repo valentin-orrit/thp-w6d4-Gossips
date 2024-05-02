@@ -1,19 +1,16 @@
 Rails.application.routes.draw do
-
+  
   resources :gossips do
-  resources :comment 
+    resources :comment 
   end
   
   resources :team, only: [:index]
   resources :contact, only: [:index]
   resources :welcome, only: [:show]
-  resources :user, only:[:show]
-  resources :city, only:[:show]
-  
-  #get '/welcome/:first_name', to: "welcome#show", as: 'welcome'  #OLD PATH BEFORE CRUD & REST
-  #get '/team', to: 'team#show'                                   #OLD PATH BEFORE CRUD & REST
-  #get '/contact', to: 'contact#show'                             #OLD PATH BEFORE CRUD & REST
-  #get '/user/:id', to: 'user#show', as: 'user'                   #OLD PATH BEFORE CRUD & REST
+  resources :user, only: [:show]
+  resources :city, only: [:show]
+  resources :session, only: [:new, :create, :destroy]
+
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   
